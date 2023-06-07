@@ -1,8 +1,9 @@
 name: example
-description: A new Flutter project.
-publish_to: "none"
+description: customizable calender picker
+version: 1.0.0
+homepage: https://github.com/gwanhwikim/custom_calender_picker
 
-version: 1.0.0+1
+publish_to: none
 
 environment:
   sdk: ">=3.0.3 <4.0.0"
