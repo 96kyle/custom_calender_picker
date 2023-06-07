@@ -41,7 +41,7 @@ class _DatePickerPageState extends State<CustomCalenderPickerExample> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 12),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
