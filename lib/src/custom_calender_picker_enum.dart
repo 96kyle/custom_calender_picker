@@ -1,3 +1,3 @@
-enum ReturnDateType { each, range }
+enum ReturnDateType { list, range }
 
 enum CalenderThema { white, dark }

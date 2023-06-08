@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class CustomCalenderPicker extends StatefulWidget {
   const CustomCalenderPicker({
-    this.returnDateType = ReturnDateType.each,
+    this.returnDateType = ReturnDateType.list,
     this.initialDateList,
     this.initialDateRange,
     this.selectedColor = const Color(0xff3581FF),
@@ -49,7 +49,7 @@ class _DatePickerWidgetState extends State<CustomCalenderPicker> {
   void initState() {
     super.initState();
 
-    if (widget.returnDateType == ReturnDateType.each) {
+    if (widget.returnDateType == ReturnDateType.list) {
       _selectedDateList.addAll(widget.initialDateList ?? []);
     } else {
       _selectRangeStart = widget.initialDateRange?.start;
@@ -176,7 +176,6 @@ class _DatePickerWidgetState extends State<CustomCalenderPicker> {
                   color: widget.calenderThema == CalenderThema.dark
                       ? Colors.white
                       : const Color(0xFF2C2C2C),
-                  fontFamily: 'Prompt',
                 ),
               ),
               GestureDetector(
@@ -210,7 +209,6 @@ class _DatePickerWidgetState extends State<CustomCalenderPicker> {
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      fontFamily: 'Prompt',
                       color: index == 0
                           ? Colors.red
                           : index == 6
@@ -247,7 +245,7 @@ class _DatePickerWidgetState extends State<CustomCalenderPicker> {
                                         _calender[index1 * 7 + index2].year,
                                         _calender[index1 * 7 + index2].month);
                                     if (widget.returnDateType ==
-                                        ReturnDateType.each) {
+                                        ReturnDateType.list) {
                                       selectDate(
                                           _calender[index1 * 7 + index2]);
                                     } else {
@@ -259,7 +257,7 @@ class _DatePickerWidgetState extends State<CustomCalenderPicker> {
                                   }
                                 : () {
                                     if (widget.returnDateType ==
-                                        ReturnDateType.each) {
+                                        ReturnDateType.list) {
                                       selectDate(
                                           _calender[index1 * 7 + index2]);
                                     } else {
@@ -306,7 +304,6 @@ class _DatePickerWidgetState extends State<CustomCalenderPicker> {
                                     fontSize: 12,
                                     color: dayTextColor(
                                         _calender[index1 * 7 + index2]),
-                                    fontFamily: 'Prompt',
                                   ),
                                 ),
                               ),
@@ -328,7 +325,7 @@ class _DatePickerWidgetState extends State<CustomCalenderPicker> {
                   backgroundColor: widget.buttonColor,
                 ),
                 onPressed: () {
-                  if (widget.returnDateType == ReturnDateType.each) {
+                  if (widget.returnDateType == ReturnDateType.list) {
                     _selectedDateList.sort();
                     Navigator.of(context).pop(_selectedDateList);
                   } else {
@@ -346,7 +343,6 @@ class _DatePickerWidgetState extends State<CustomCalenderPicker> {
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
                     color: widget.buttonTextColor,
-                    fontFamily: 'Prompt',
                   ),
                 ),
               ),
@@ -358,7 +354,7 @@ class _DatePickerWidgetState extends State<CustomCalenderPicker> {
   }
 
   Color _dayBoxColor(DateTime date) {
-    return widget.returnDateType == ReturnDateType.each
+    return widget.returnDateType == ReturnDateType.list
         ? _selectedDateList.indexWhere((e) =>
                     e.year == date.year &&
                     e.month == date.month &&
@@ -377,7 +373,7 @@ class _DatePickerWidgetState extends State<CustomCalenderPicker> {
   }
 
   Color dayTextColor(DateTime date) {
-    return widget.returnDateType == ReturnDateType.each
+    return widget.returnDateType == ReturnDateType.list
         ? _selectedDateList.indexWhere((e) =>
                     e.year == date.year &&
                     e.month == date.month &&

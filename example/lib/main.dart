@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Container(),
+      home: const CustomCalenderPickerExample(),
     );
   }
 }
@@ -35,6 +35,7 @@ class _DatePickerPageState extends State<CustomCalenderPickerExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text(
           'Custom Date Picker',
@@ -60,7 +61,7 @@ class _DatePickerPageState extends State<CustomCalenderPickerExample> {
                       ),
                     ),
                     child: CustomCalenderPicker(
-                      returnDateType: ReturnDateType.each,
+                      returnDateType: ReturnDateType.list,
                       initialDateList: eachDateTime,
                       calenderThema: CalenderThema.white,
                     ),
