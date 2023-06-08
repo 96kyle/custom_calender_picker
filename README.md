@@ -2,7 +2,7 @@
 
 ### This package is a customizable calender_picker
 
-## Each Example
+## List Example
 
 ![each](https://github.com/gwanhwikim/custom_calender_picker/assets/67884947/0d4a224f-2068-42e9-9d86-d70d5b10fc7d)
 
